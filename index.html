@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML To PDF</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
+    </script>
+  </head>
+  <body>
+		<table border = 1 cellpadding = 10 id = "table">
+      <tr>
+        <td>YouTube</td>
+      </tr>
+      <tr>
+        <td>David G Tech</td>
+      </tr>
+    </table>
+    <br>
+    <button id="download">Download as PDF</button>
+
+		<script>
+      document.querySelector('#download').onclick = function(){
+        var element = document.querySelector('#table');
+				html2pdf().from(element).save();
+      }
+		</script>
+  </body>
+</html>
